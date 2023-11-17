@@ -5,5 +5,25 @@
 
 {% block page_content %}
 <!-- Content-->
-    <h2>Home</h2>
+    <h5>Home</h5>    
+    <small>
+        <p>Hi, Im a Full Stack Developer in training. I write about my learning journey and my current projects. I also tweet about this journey as well <a href="https://twitter.com/CodexMarcus">x.com</a></p>
+        <p><strong>Current Status: </strong></p>
+        I am on a journey to learning web development and becoming a Full Stack Developer.  I am currently learning HTML, CSS, JavaScript, and Python. 
+        My Stacks are Django, MySql, and React
+        I've started learning in June 2023 and I have been learning from the following resources:
+        <ul>
+            <li><a href="https://www.coursera.org/">Corsera</a></li>
+            <li><a href="https://realpython.com">RealPython</a></li>
+        </ul>
+        I am also learning about the <a href="https://www.chia.net/"> Chia Blockchain</a>.  After completing the Full Stack Developer course, I aim to learn Chialisp and create a Chia Blockchain application.
+        <p><strong>Currently Building: </strong><a href="https://www.chamsterchia.com">Chamster Golfers, an NFT Golf game</a></p>
+        
+        <p><strong>Posts: </strong></p>
+        <ul>
+            {% for post in posts %}
+            <li>{{ post.created_on.date }} <a href="{% url 'blog_detail' post.pk %}"> {{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </small>
 {% endblock page_content %}

@@ -6,9 +6,9 @@
     
 {% block page_content %} 
     <!--content-->
-    {% block posts %} 
+    {% block posts %}   
         <small>
-            Categories: {% for category in categories %}
+            All Categories: {% for category in categories %}
             <a href="{% url 'blog_category' category.name %}"> {{ category.name }} </a>
             {% endfor %}
         </small>

@@ -6,7 +6,11 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 
 def blog_home(request):
-    return render(request, 'blog/home.html')
+    post = Post.objects.all().order_by('-created_on')
+    context = {
+        'posts' : post,
+    }
+    return render(request, 'blog/home.html', context)
 
 def blog_index(request):
     posts = Post.objects.all().order_by('-created_on')
